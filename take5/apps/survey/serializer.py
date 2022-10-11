@@ -3,7 +3,7 @@ from dataclasses import field
 from django.contrib.auth.models import User
 from rest_framework import serializers
 
-from ..models import Survey, SurveyQuestion, SurveyQuestionAlternative
+from .models import Survey, SurveyQuestion, SurveyQuestionAlternative
 
 
 class SurveyQuestionAlternativeSerializer(serializers.ModelSerializer):
