@@ -5,12 +5,12 @@ from ..models import Survey, SurveyQuestion, SurveyQuestionAlternative
 
 
 class SurveyViewSet(viewsets.ModelViewSet):
-    queryset = Survey.objects.all()
+    queryset = Survey.objects.prefetch_related('questions__alternatives')
     serializer_class = SurveySerializer
 
 
 class SurveyQuestionViewSet(viewsets.ModelViewSet):
-    queryset = SurveyQuestion.objects.all()
+    queryset = SurveyQuestion.objects.prefetch_related('alternatives')
     serializer_class = SurveyQuestionSerializer
 
 
